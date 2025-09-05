@@ -104,7 +104,178 @@ export default function Portfolio() {
     }
   }
 
-       title: "Travel Booking Interface",
+  const serviceDetails = {
+    webDevelopment: {
+      title: "Web Development",
+      description: "Build high-performance, scalable web applications with modern technologies and best practices.",
+      icon: Code,
+      features: [
+        "Responsive Design",
+        "SEO Optimization",
+        "Backend Integration",
+        "Performance Optimization",
+        "Cross-browser Compatibility",
+      ],
+      technologies: ["React", "Next.js", "Node.js", "MongoDB", "TypeScript"],
+    },
+    cybersecurity: {
+      title: "Cybersecurity",
+      description: "Protect your digital assets from threats with comprehensive security solutions.",
+      icon: Shield,
+      features: [
+        "Vulnerability Assessment",
+        "Penetration Testing",
+        "Security Audits",
+        "Risk Analysis",
+        "Compliance Consulting",
+      ],
+      technologies: ["Nmap", "Metasploit", "Python", "Wireshark", "Burp Suite"],
+    },
+    uiUxDesign: {
+      title: "UI/UX Design",
+      description: "Create intuitive and visually appealing user interfaces that enhance user experience.",
+      icon: Palette,
+      features: ["User Research", "Wireframing", "Prototyping", "User Testing", "Design Systems"],
+      technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Principle"],
+    },
+    businessWriting: {
+      title: "Business Writing",
+      description: "Craft compelling business documents and content that drive results.",
+      icon: FileText,
+      features: ["Cv Compilation and Resume", "Proposal Development", "Content Strategy", "Copywriting", "Grant Writing"],
+      technologies: ["Microsoft Word", "Google Docs", "Notion", "Grammarly", "Hemingway"],
+    },
+    virtualAssistant: {
+      title: "Virtual Assistant",
+      description: "Manage your daily tasks efficiently with professional virtual assistance.",
+      icon: Headphones,
+      features: ["Email Management", "Calendar Scheduling", "Data Entry", "Research Tasks", "Customer Support"],
+      technologies: ["Google Workspace", "Microsoft 365", "Slack", "Trello", "Asana"],
+    },
+  }
+
+  const projectDetails = {
+    ecommercePlatform: {
+      title: "E-commerce Platform",
+      description:
+        "A full-stack e-commerce solution with advanced features including inventory management, payment processing, and analytics dashboard.",
+      duration: "3 weeks",
+      client: "TechMart Nigeria",
+      category: "Web Development",
+      image: "/modern-ecommerce-dashboard.png",
+      features: [
+        "Multi-vendor Support",
+        "Real-time Inventory",
+        "Payment Gateway Integration",
+        "Analytics Dashboard",
+        "Mobile App",
+      ],
+      technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+    },
+    cybersecurityDashboard: {
+      title: "Cybersecurity Dashboard",
+      description:
+        "Real-time security monitoring dashboard for enterprise clients with threat detection and incident response capabilities.",
+      duration: "3 weeks",
+      client: "SecureNet Solutions",
+      category: "Web Development",
+      image: "/cybersecurity-dashboard-with-charts-and-alerts.jpg",
+      features: [
+        "Threat Detection",
+        "Real-time Monitoring",
+        "Incident Response",
+        "Compliance Reporting",
+        "Risk Assessment",
+      ],
+      technologies: ["Python", "Django", "PostgreSQL", "Redis", "Docker"],
+    },
+    brandIdentity: {
+      title: "Brand Identity Design",
+      description:
+        "Complete brand identity package including logo design, brand guidelines, and marketing materials for a fintech startup.",
+      duration: "2 months",
+      client: "PayFlow Africa",
+      category: "UI/UX Design",
+      image: "/modern-brand-identity-design-mockup.jpg",
+      features: ["Logo Design", "Brand Guidelines", "Marketing Materials", "Website Design", "Social Media Kit"],
+      technologies: ["Adobe Illustrator", "Photoshop", "Figma", "InDesign", "After Effects"],
+    },
+    mobileApp: {
+      title: "Mobile Banking App",
+      description:
+        "Secure mobile banking application with biometric authentication and real-time transaction monitoring.",
+      duration: "5 weeks",
+      client: "FirstBank Digital",
+      category: "UI/UX Design",
+      image: "/mobile-banking-app.png",
+      features: [
+        "Biometric Auth",
+        "Real-time Transactions",
+        "Bill Payments",
+        "Investment Tracking",
+        "Customer Support",
+      ],
+      technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL", "AWS"],
+    },
+    corporateWebsite: {
+      title: "Corporate Website",
+      description: "Modern corporate website with CMS integration, SEO optimization, and multi-language support.",
+      duration: "3 weeks",
+      client: "Global Logistics Ltd",
+      category: "Web Development",
+      image: "/corporate-homepage.png",
+      features: ["CMS Integration", "SEO Optimization", "Multi-language", "Contact Forms", "Blog System"],
+      technologies: ["Next.js", "Strapi", "PostgreSQL", "Vercel", "Cloudinary"],
+    },
+    analyticsPortal: {
+      title: "Data Analytics Portal",
+      description: "Business intelligence dashboard with advanced data visualization and reporting capabilities.",
+      duration: "2 weeks",
+      client: "DataInsight Pro",
+      category: "Web Development",
+      image: "/data-analytics-dashboard.png",
+      features: ["Data Visualization", "Custom Reports", "Real-time Analytics", "Export Functions", "User Management"],
+      technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
+    },
+    restaurantApp: {
+      title: "Restaurant Management App",
+      description:
+        "Complete restaurant management system with order tracking, inventory management, and customer analytics.",
+      duration: "3 weeks",
+      client: "FoodHub Lagos",
+      category: "Web Development",
+      image: "/restaurant-management-dashboard.jpg",
+      features: [
+        "Order Management",
+        "Inventory Tracking",
+        "Staff Management",
+        "Customer Analytics",
+        "Payment Processing",
+      ],
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
+    },
+    fitnessApp: {
+      title: "Fitness Tracking App",
+      description: "Mobile fitness application with workout planning, progress tracking, and social features.",
+      duration: "2 weeks",
+      client: "FitLife Nigeria",
+      category: "UI/UX Design",
+      image: "/fitness-app-interface.jpg",
+      features: ["Workout Planning", "Progress Tracking", "Social Features", "Nutrition Guide", "Personal Trainer"],
+      technologies: ["React Native", "Firebase", "Redux", "Expo", "Stripe"],
+    },
+    educationPlatform: {
+      title: "Online Learning Platform",
+      description: "Comprehensive e-learning platform with video streaming, assessments, and progress tracking.",
+      duration: "4 weeks",
+      client: "EduTech Africa",
+      category: "Web Development",
+      image: "/online-learning-platform.jpg",
+      features: ["Video Streaming", "Interactive Quizzes", "Progress Tracking", "Certificates", "Discussion Forums"],
+      technologies: ["Next.js", "Node.js", "PostgreSQL", "AWS S3", "WebRTC"],
+    },
+    travelApp: {
+      title: "Travel Booking Interface",
       description: "Modern travel booking application with intuitive search, booking flow, and trip management.",
       duration: "4 weeks",
       client: "WanderWise Travel",
@@ -114,6 +285,7 @@ export default function Portfolio() {
       technologies: ["Figma", "Adobe XD", "Principle", "InVision", "Sketch"],
     },
   }
+
   const skills = [
     { name: "PHP", level: 90, category: "Backend" },
     { name: "React", level: 95, category: "Frontend" },
