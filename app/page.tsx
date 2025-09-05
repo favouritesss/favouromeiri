@@ -839,107 +839,26 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Parallax */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url(/modern-tech-office-workspace-with-developers-codin.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95"></div>
-        </div>
+      {/* Hero Section */}
+      <section id="hero" className="min-h-screen flex items-center justify-center bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Hi, I'm <span className="text-primary">Omeiri Favour</span>
+          </h1>
 
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 z-10">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-primary/5 rounded-full animate-bounce delay-1000"></div>
-          <div className="absolute bottom-40 left-20 w-12 h-12 bg-primary/15 rounded-full animate-pulse delay-500"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 bg-primary/8 rounded-full animate-bounce delay-1500"></div>
-        </div>
+          <p className="text-xl sm:text-2xl text-muted-foreground mb-8">Full Stack Developer & UI/UX Designer</p>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6 animate-fade-in">
-              <Zap className="h-4 w-4 mr-2" />
-              Available for new projects
-            </div>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            I create beautiful, functional websites and applications that deliver exceptional user experiences.
+          </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-gradient">
-                Omeiri Favour
-              </span>
-              <br />
-              <span className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground font-normal">
-                Full Stack Developer & Designer
-              </span>
-            </h1>
-
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              I craft exceptional digital experiences through innovative web development, stunning UI/UX design, and
-              robust cybersecurity solutions. Let's build something amazing together.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button
-                size="lg"
-                onClick={() => scrollToSection("portfolio")}
-                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transform transition-all duration-300 hover:scale-105 shadow-xl text-lg px-8 py-3"
-              >
-                <Rocket className="h-5 w-5 mr-2" />
-                View My Work
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => scrollToSection("contact")}
-                className="border-2 hover:bg-primary hover:text-primary-foreground transform transition-all duration-300 hover:scale-105 text-lg px-8 py-3"
-              >
-                <Mail className="h-5 w-5 mr-2" />
-                Let's Talk
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-              <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">
-                  50+
-                </div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">
-                  30+
-                </div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">
-                  4+
-                </div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">
-                  24/7
-                </div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" onClick={() => scrollToSection("portfolio")}>
+              View My Work
+            </Button>
+            <Button size="lg" variant="outline" onClick={() => scrollToSection("contact")}>
+              Get In Touch
+            </Button>
           </div>
         </div>
       </section>
