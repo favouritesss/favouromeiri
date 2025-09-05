@@ -49,6 +49,25 @@ export default function Portfolio() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem("theme")
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    setIsDark(savedTheme === "dark" || (!savedTheme && prefersDark))
+  }, [])
+
+  useEffect(() => {
+    // Apply theme to document
+    if (isDark) {
+      document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+      localStorage.setItem("theme", "light")
+    }
+  }, [isDark])
   
 
   const openWhatsApp = () => {
