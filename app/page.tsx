@@ -49,25 +49,7 @@ export default function Portfolio() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const [isDark, setIsDark] = useState(false)
-
-  useEffect(() => {
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem("theme")
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    setIsDark(savedTheme === "dark" || (!savedTheme && prefersDark))
-  }, [])
-
-  useEffect(() => {
-    // Apply theme to document
-    if (isDark) {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    }
-  }, [isDark])
+  
 
   const openWhatsApp = () => {
     window.open("https://wa.me/2349060474709", "_blank")
@@ -203,7 +185,7 @@ export default function Portfolio() {
       title: "Mobile Banking App",
       description:
         "Secure mobile banking application with biometric authentication and real-time transaction monitoring.",
-      duration: "6 months",
+      duration: "5 weeks",
       client: "FirstBank Digital",
       category: "UI/UX Design",
       image: "/mobile-banking-app.png",
@@ -219,7 +201,7 @@ export default function Portfolio() {
     corporateWebsite: {
       title: "Corporate Website",
       description: "Modern corporate website with CMS integration, SEO optimization, and multi-language support.",
-      duration: "2 months",
+      duration: "3 weeks",
       client: "Global Logistics Ltd",
       category: "Web Development",
       image: "/corporate-homepage.png",
@@ -229,7 +211,7 @@ export default function Portfolio() {
     analyticsPortal: {
       title: "Data Analytics Portal",
       description: "Business intelligence dashboard with advanced data visualization and reporting capabilities.",
-      duration: "5 months",
+      duration: "2 weeks",
       client: "DataInsight Pro",
       category: "Web Development",
       image: "/data-analytics-dashboard.png",
@@ -240,7 +222,7 @@ export default function Portfolio() {
       title: "Restaurant Management App",
       description:
         "Complete restaurant management system with order tracking, inventory management, and customer analytics.",
-      duration: "4 months",
+      duration: "3 weeks",
       client: "FoodHub Lagos",
       category: "Web Development",
       image: "/restaurant-management-dashboard.jpg",
@@ -256,7 +238,7 @@ export default function Portfolio() {
     fitnessApp: {
       title: "Fitness Tracking App",
       description: "Mobile fitness application with workout planning, progress tracking, and social features.",
-      duration: "5 months",
+      duration: "2 weeks",
       client: "FitLife Nigeria",
       category: "UI/UX Design",
       image: "/fitness-app-interface.jpg",
@@ -266,7 +248,7 @@ export default function Portfolio() {
     educationPlatform: {
       title: "Online Learning Platform",
       description: "Comprehensive e-learning platform with video streaming, assessments, and progress tracking.",
-      duration: "6 months",
+      duration: "4 weeks",
       client: "EduTech Africa",
       category: "Web Development",
       image: "/online-learning-platform.jpg",
@@ -276,7 +258,7 @@ export default function Portfolio() {
     travelApp: {
       title: "Travel Booking Interface",
       description: "Modern travel booking application with intuitive search, booking flow, and trip management.",
-      duration: "3 months",
+      duration: "4 weeks",
       client: "WanderWise Travel",
       category: "UI/UX Design",
       image: "/travel-booking-interface.jpg",
@@ -787,14 +769,14 @@ export default function Portfolio() {
                         <Mail className="h-5 w-5 text-primary mr-3" />
                         <div>
                           <p className="font-medium text-foreground">Email</p>
-                          <p className="text-sm text-muted-foreground">hello@favtech.dev</p>
+                          <p className="text-sm text-muted-foreground">favouromeiri5@gmail.com</p>
                         </div>
                       </div>
                       <div className="flex items-center">
                         <Location className="h-5 w-5 text-primary mr-3" />
                         <div>
                           <p className="font-medium text-foreground">Location</p>
-                          <p className="text-sm text-muted-foreground">Lagos, Nigeria</p>
+                          <p className="text-sm text-muted-foreground">Nigeria</p>
                         </div>
                       </div>
                     </div>
