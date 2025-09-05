@@ -142,7 +142,7 @@ export default function Portfolio() {
       title: "Business Writing",
       description: "Craft compelling business documents and content that drive results.",
       icon: FileText,
-      features: ["Technical Documentation", "Proposal Development", "Content Strategy", "Copywriting", "Grant Writing"],
+      features: ["Cv Compilation and Resume", "Proposal Development", "Content Strategy", "Copywriting", "Grant Writing"],
       technologies: ["Microsoft Word", "Google Docs", "Notion", "Grammarly", "Hemingway"],
     },
     virtualAssistant: {
@@ -159,7 +159,7 @@ export default function Portfolio() {
       title: "E-commerce Platform",
       description:
         "A full-stack e-commerce solution with advanced features including inventory management, payment processing, and analytics dashboard.",
-      duration: "4 months",
+      duration: "3 weeks",
       client: "TechMart Nigeria",
       category: "Web Development",
       image: "/modern-ecommerce-dashboard.png",
@@ -176,7 +176,7 @@ export default function Portfolio() {
       title: "Cybersecurity Dashboard",
       description:
         "Real-time security monitoring dashboard for enterprise clients with threat detection and incident response capabilities.",
-      duration: "3 months",
+      duration: "3 weeks",
       client: "SecureNet Solutions",
       category: "Web Development",
       image: "/cybersecurity-dashboard-with-charts-and-alerts.jpg",
