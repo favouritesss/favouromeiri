@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -25,8 +25,6 @@ import {
   Shield,
   FileText,
   Headphones,
-  Sun,
-  Moon,
   Phone,
   Mail,
   LocateIcon as Location,
@@ -49,26 +47,8 @@ export default function Portfolio() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const [isDark, setIsDark] = useState(false)
-
-  useEffect(() => {
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem("theme")
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    setIsDark(savedTheme === "dark" || (!savedTheme && prefersDark))
-  }, [])
-
-  useEffect(() => {
-    // Apply theme to document
-    if (isDark) {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    }
-  }, [isDark])
-  
+  // 🔧 Email delivery via Formspree
+  const FORMSPREE_FORM_ID = "yourFormID" // <-- replace with your Formspree ID, e.g. "moqbkwkz"
 
   const openWhatsApp = () => {
     window.open("https://wa.me/2349060474709", "_blank")
@@ -82,20 +62,35 @@ export default function Portfolio() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-      setSubmitStatus("success")
-      setFormData({
-        budget: "",
-        message: "",
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        projectType: "",
-        timeline: "",
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Project Inquiry from Portfolio",
+          _template: "table",
+        }),
       })
+
+      if (res.ok) {
+        setSubmitStatus("success")
+        setFormData({
+          budget: "",
+          message: "",
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          projectType: "",
+          timeline: "",
+        })
+      } else {
+        setSubmitStatus("error")
+      }
     } catch (error) {
       setSubmitStatus("error")
     } finally {
@@ -426,14 +421,12 @@ export default function Portfolio() {
             </nav>
 
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" onClick={() => setIsDark(!isDark)}>
-                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </Button>
               <Button
                 size="icon"
                 variant="outline"
                 className="lg:hidden hover:bg-primary hover:text-primary-foreground bg-transparent"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle Menu"
               >
                 {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
@@ -567,6 +560,18 @@ export default function Portfolio() {
                           </Badge>
                         ))}
                       </div>
+                      <div className="mt-4">
+                        <Button
+                          variant="link"
+                          className="px-0"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setShowServiceModal(key)
+                          }}
+                        >
+                          Learn More →
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 )
@@ -614,7 +619,7 @@ export default function Portfolio() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Object.entries(projectDetails)
-                .filter(([key, project]) => projectFilter === "all" || project.category === projectFilter)
+                .filter(([_, project]) => projectFilter === "all" || project.category === projectFilter)
                 .map(([key, project]) => (
                   <Card
                     key={key}
@@ -639,6 +644,18 @@ export default function Portfolio() {
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-muted-foreground">{project.client}</span>
                         <Badge variant="outline">{project.duration}</Badge>
+                      </div>
+                      <div className="mt-4">
+                        <Button
+                          variant="link"
+                          className="px-0"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setShowProjectModal(key)
+                          }}
+                        >
+                          View Details →
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -812,6 +829,7 @@ export default function Portfolio() {
                         variant="outline"
                         className="hover:bg-primary hover:text-primary-foreground bg-transparent"
                         onClick={() => window.open("https://linkedin.com/in/favouromeiri", "_blank")}
+                        aria-label="Open LinkedIn"
                       >
                         <Linkedin className="h-5 w-5" />
                       </Button>
@@ -820,6 +838,7 @@ export default function Portfolio() {
                         variant="outline"
                         className="hover:bg-primary hover:text-primary-foreground bg-transparent"
                         onClick={() => window.open("https://github.com/favouromeiri", "_blank")}
+                        aria-label="Open GitHub"
                       >
                         <Github className="h-5 w-5" />
                       </Button>
@@ -828,6 +847,7 @@ export default function Portfolio() {
                         variant="outline"
                         className="hover:bg-primary hover:text-primary-foreground bg-transparent"
                         onClick={() => window.open("https://twitter.com/favouromeiri", "_blank")}
+                        aria-label="Open Twitter"
                       >
                         <Twitter className="h-5 w-5" />
                       </Button>
@@ -841,23 +861,19 @@ export default function Portfolio() {
                 <Card className="p-6 lg:p-8">
                   <CardContent className="p-0">
                     {submitStatus === "success" && (
-                      <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                      <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                         <div className="flex items-center">
                           <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-                          <p className="text-green-800 dark:text-green-200">
-                            Message sent successfully! I'll get back to you soon.
-                          </p>
+                          <p className="text-green-800">Message sent successfully! I'll get back to you soon.</p>
                         </div>
                       </div>
                     )}
 
                     {submitStatus === "error" && (
-                      <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                      <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                         <div className="flex items-center">
                           <X className="h-5 w-5 text-red-600 mr-2" />
-                          <p className="text-red-800 dark:text-red-200">
-                            Failed to send message. Please try again or contact me directly.
-                          </p>
+                          <p className="text-red-800">Failed to send message. Please try again or contact me directly.</p>
                         </div>
                       </div>
                     )}
@@ -917,25 +933,6 @@ export default function Portfolio() {
                           <Select
                             value={formData.projectType}
                             onValueChange={(value) => setFormData({ ...formData, projectType: value })}
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select project type" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="web-development">Web Development</SelectItem>
-                              <SelectItem value="cybersecurity">Cybersecurity</SelectItem>
-                              <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                              <SelectItem value="business-writing">Business Writing</SelectItem>
-                              <SelectItem value="virtual-assistant">Virtual Assistant</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-foreground mb-2">Timeline</label>
-                          <Select
-                            value={formData.timeline}
-                            onValueChange={(value) => setFormData({ ...formData, timeline: value })}
                           >
                             <SelectTrigger>
                               <SelectValue placeholder="Project timeline" />
