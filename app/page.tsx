@@ -1022,28 +1022,28 @@ export default function Portfolio() {
                 Your trusted partner for comprehensive technology solutions. From web development to cybersecurity, we
                 deliver excellence in every project.
               </p>
-              <div className="flex gap-3">
+               <div className="flex gap-3">
                 <Button
                   size="icon"
                   variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground bg-transparent"
-                  onClick={() => window.open("https://linkedin.com/in/favouromeiri", "_blank")}
+                  className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
+                  onClick={() => window.open("https://www.linkedin.com/in/omeiri-favour-620a582a6/", "_blank")}
                 >
                   <Linkedin className="h-5 w-5" />
                 </Button>
                 <Button
                   size="icon"
                   variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground bg-transparent"
-                  onClick={() => window.open("https://github.com/favouromeiri", "_blank")}
+                  className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
+                  onClick={() => window.open("https://github.com/favouritesss", "_blank")}
                 >
                   <Github className="h-5 w-5" />
                 </Button>
                 <Button
                   size="icon"
                   variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground bg-transparent"
-                  onClick={() => window.open("https://twitter.com/favouromeiri", "_blank")}
+                  className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
+                  onClick={() => window.open("https://x.com/that_tech_bee?s=21", "_blank")}
                 >
                   <Twitter className="h-5 w-5" />
                 </Button>
