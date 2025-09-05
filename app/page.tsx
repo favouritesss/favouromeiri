@@ -7,412 +7,77 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Progress } from "@/components/ui/progress"
-
-const Menu = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-)
-
-const X = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-  </svg>
-)
-
-const Code = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-  </svg>
-)
-
-const Palette = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2"
-    />
-  </svg>
-)
-
-const Shield = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-    />
-  </svg>
-)
-
-const PenTool = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-    />
-  </svg>
-)
-
-const Headphones = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-    />
-  </svg>
-)
-
-const Star = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-    />
-  </svg>
-)
-
-const Github = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-  </svg>
-)
-
-const ExternalLink = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-    />
-  </svg>
-)
-
-const Mail = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-    />
-  </svg>
-)
-
-const Phone = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-    />
-  </svg>
-)
-
-const Location = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-    />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-  </svg>
-)
-
-const Send = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-  </svg>
-)
-
-const CheckCircle = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-    />
-  </svg>
-)
-
-const Loader2 = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-    />
-  </svg>
-)
-
-const Linkedin = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-  </svg>
-)
-
-const Twitter = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-  </svg>
-)
-
-const MessageCircle = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-    />
-  </svg>
-)
-
-const Sun = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-    />
-  </svg>
-)
-
-const Moon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-    />
-  </svg>
-)
-
-const GraduationCap = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-    />
-  </svg>
-)
-
-const Zap = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-  </svg>
-)
-
-const Rocket = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-    />
-  </svg>
-)
-
-const Smartphone = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"
-    />
-  </svg>
-)
-
-const Database = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-    />
-  </svg>
-)
-
-const Cloud = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-    />
-  </svg>
-)
-
-const Lock = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-    />
-  </svg>
-)
-
-const Cpu = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-    />
-  </svg>
-)
-
-const Wifi = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
-    />
-  </svg>
-)
-
-const Monitor = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-    />
-  </svg>
-)
+import {
+  Send,
+  CheckCircle,
+  Github,
+  Linkedin,
+  Twitter,
+  X,
+  Menu,
+  MessageCircle,
+  Star,
+  Calendar,
+  Code,
+  Palette,
+  Shield,
+  FileText,
+  Headphones,
+  Sun,
+  Moon,
+  Phone,
+  Mail,
+  LocateIcon as Location,
+} from "lucide-react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function Portfolio() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
-  const [activeFilter, setActiveFilter] = useState("all")
+  const [showServiceModal, setShowServiceModal] = useState<string | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [formData, setFormData] = useState({
+    budget: "",
+    message: "",
     name: "",
     email: "",
     phone: "",
     company: "",
     projectType: "",
     timeline: "",
-    budget: "",
-    message: "",
   })
-
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const [file, setFile] = useState<File | null>(null)
-  const [scrollY, setScrollY] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
+
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 })
-
-    window.addEventListener("scroll", handleScroll)
-    const heroElement = document.querySelector("#hero")
-    if (heroElement) observer.observe(heroElement)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      observer.disconnect()
-    }
-  }, [])
-
-  useEffect(() => {
+    // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem("theme")
-    if (savedTheme === "dark") {
-      setIsDarkMode(true)
-      document.documentElement.classList.add("dark")
-    }
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    setIsDark(savedTheme === "dark" || (!savedTheme && prefersDark))
   }, [])
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-    if (!isDarkMode) {
+  useEffect(() => {
+    // Apply theme to document
+    if (isDark) {
       document.documentElement.classList.add("dark")
       localStorage.setItem("theme", "dark")
     } else {
       document.documentElement.classList.remove("dark")
       localStorage.setItem("theme", "light")
     }
-  }
+  }, [isDark])
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-    setIsMenuOpen(false)
+  const openWhatsApp = () => {
+    window.open("https://wa.me/2349060474709", "_blank")
   }
 
   const downloadCV = () => {
-    // Create a temporary link to download CV
-    const link = document.createElement("a")
-    link.href = "/cv.pdf" // You'll need to add your CV file to the public folder
-    link.download = "Omeiri_Favour_CV.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    window.open("/path/to/cv.pdf", "_blank")
   }
 
-  const openWhatsApp = () => {
-    const message = encodeURIComponent("Hello! I'm interested in your services. Let's discuss my project.")
-    window.open(`https://wa.me/2349060474709?text=${message}`, "_blank")
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0])
-    }
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
@@ -421,16 +86,15 @@ export default function Portfolio() {
       await new Promise((resolve) => setTimeout(resolve, 2000))
       setSubmitStatus("success")
       setFormData({
+        budget: "",
+        message: "",
         name: "",
         email: "",
         phone: "",
         company: "",
         projectType: "",
         timeline: "",
-        budget: "",
-        message: "",
       })
-      setFile(null)
     } catch (error) {
       setSubmitStatus("error")
     } finally {
@@ -439,228 +103,250 @@ export default function Portfolio() {
     }
   }
 
-  const services = [
-    {
-      icon: <Code className="h-8 w-8" />,
+  const serviceDetails = {
+    webDevelopment: {
       title: "Web Development",
-      description: "Full-stack web applications using modern technologies like React, Next.js, and Node.js.",
-      features: ["Responsive Design", "Performance Optimization", "SEO Friendly", "Modern Frameworks"],
+      description: "Build high-performance, scalable web applications with modern technologies and best practices.",
+      icon: Code,
+      features: [
+        "Responsive Design",
+        "SEO Optimization",
+        "Backend Integration",
+        "Performance Optimization",
+        "Cross-browser Compatibility",
+      ],
+      technologies: ["React", "Next.js", "Node.js", "MongoDB", "TypeScript"],
     },
-    {
-      icon: <Palette className="h-8 w-8" />,
-      title: "UI/UX Design",
-      description: "User-centered design solutions that create engaging and intuitive digital experiences.",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    },
-    {
-      icon: <Shield className="h-8 w-8" />,
+    cybersecurity: {
       title: "Cybersecurity",
-      description: "Comprehensive security solutions to protect your digital assets and infrastructure.",
-      features: ["Security Audits", "Penetration Testing", "Risk Assessment", "Compliance"],
+      description: "Protect your digital assets from threats with comprehensive security solutions.",
+      icon: Shield,
+      features: [
+        "Vulnerability Assessment",
+        "Penetration Testing",
+        "Security Audits",
+        "Risk Analysis",
+        "Compliance Consulting",
+      ],
+      technologies: ["Nmap", "Metasploit", "Python", "Wireshark", "Burp Suite"],
     },
-    {
-      icon: <PenTool className="h-8 w-8" />,
+    uiUxDesign: {
+      title: "UI/UX Design",
+      description: "Create intuitive and visually appealing user interfaces that enhance user experience.",
+      icon: Palette,
+      features: ["User Research", "Wireframing", "Prototyping", "User Testing", "Design Systems"],
+      technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Principle"],
+    },
+    businessWriting: {
       title: "Business Writing",
-      description: "Professional content creation for proposals, documentation, and marketing materials.",
-      features: ["Technical Writing", "Proposals", "Documentation", "Content Strategy"],
+      description: "Craft compelling business documents and content that drive results.",
+      icon: FileText,
+      features: ["Technical Documentation", "Proposal Development", "Content Strategy", "Copywriting", "Grant Writing"],
+      technologies: ["Microsoft Word", "Google Docs", "Notion", "Grammarly", "Hemingway"],
     },
-    {
-      icon: <Headphones className="h-8 w-8" />,
+    virtualAssistant: {
       title: "Virtual Assistant",
-      description: "Administrative support and project management to streamline your business operations.",
-      features: ["Project Management", "Research", "Data Entry", "Customer Support"],
+      description: "Manage your daily tasks efficiently with professional virtual assistance.",
+      icon: Headphones,
+      features: ["Email Management", "Calendar Scheduling", "Data Entry", "Research Tasks", "Customer Support"],
+      technologies: ["Google Workspace", "Microsoft 365", "Slack", "Trello", "Asana"],
     },
-  ]
+  }
 
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Dashboard",
-      description: "Modern admin dashboard for e-commerce management with real-time analytics and inventory tracking.",
-      image: "/modern-ecommerce-dashboard.png",
+  const projectDetails = {
+    ecommercePlatform: {
+      title: "E-commerce Platform",
+      description:
+        "A full-stack e-commerce solution with advanced features including inventory management, payment processing, and analytics dashboard.",
+      duration: "4 months",
+      client: "TechMart Nigeria",
       category: "Web Development",
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
+      image: "/modern-ecommerce-dashboard.png",
+      features: [
+        "Multi-vendor Support",
+        "Real-time Inventory",
+        "Payment Gateway Integration",
+        "Analytics Dashboard",
+        "Mobile App",
+      ],
+      technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
     },
-    {
-      id: 2,
+    cybersecurityDashboard: {
       title: "Cybersecurity Dashboard",
       description:
-        "Comprehensive security monitoring dashboard with threat detection and incident response capabilities.",
+        "Real-time security monitoring dashboard for enterprise clients with threat detection and incident response capabilities.",
+      duration: "3 months",
+      client: "SecureNet Solutions",
+      category: "Web Development",
       image: "/cybersecurity-dashboard-with-charts-and-alerts.jpg",
-      category: "Cybersecurity",
-      technologies: ["Python", "Django", "PostgreSQL", "Chart.js"],
-      liveUrl: "#",
-      githubUrl: "#",
+      features: [
+        "Threat Detection",
+        "Real-time Monitoring",
+        "Incident Response",
+        "Compliance Reporting",
+        "Risk Assessment",
+      ],
+      technologies: ["Python", "Django", "PostgreSQL", "Redis", "Docker"],
     },
-    {
-      id: 3,
+    brandIdentity: {
       title: "Brand Identity Design",
-      description: "Complete brand identity package including logo design, color palette, and brand guidelines.",
-      image: "/modern-brand-identity-design-mockup.jpg",
+      description:
+        "Complete brand identity package including logo design, brand guidelines, and marketing materials for a fintech startup.",
+      duration: "2 months",
+      client: "PayFlow Africa",
       category: "UI/UX Design",
-      technologies: ["Figma", "Adobe Illustrator", "Photoshop"],
-      liveUrl: "#",
-      githubUrl: "#",
+      image: "/modern-brand-identity-design-mockup.jpg",
+      features: ["Logo Design", "Brand Guidelines", "Marketing Materials", "Website Design", "Social Media Kit"],
+      technologies: ["Adobe Illustrator", "Photoshop", "Figma", "InDesign", "After Effects"],
     },
-    {
-      id: 4,
+    mobileApp: {
       title: "Mobile Banking App",
       description:
-        "Secure and intuitive mobile banking application with biometric authentication and real-time transactions.",
+        "Secure mobile banking application with biometric authentication and real-time transaction monitoring.",
+      duration: "6 months",
+      client: "FirstBank Digital",
+      category: "UI/UX Design",
       image: "/mobile-banking-app.png",
-      category: "UI/UX Design",
-      technologies: ["React Native", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
+      features: [
+        "Biometric Auth",
+        "Real-time Transactions",
+        "Bill Payments",
+        "Investment Tracking",
+        "Customer Support",
+      ],
+      technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL", "AWS"],
     },
-    {
-      id: 5,
+    corporateWebsite: {
       title: "Corporate Website",
-      description: "Professional corporate website with CMS integration and SEO optimization for maximum visibility.",
+      description: "Modern corporate website with CMS integration, SEO optimization, and multi-language support.",
+      duration: "2 months",
+      client: "Global Logistics Ltd",
+      category: "Web Development",
       image: "/corporate-homepage.png",
-      category: "Web Development",
-      technologies: ["Next.js", "Sanity CMS", "Vercel", "TypeScript"],
-      liveUrl: "#",
-      githubUrl: "#",
+      features: ["CMS Integration", "SEO Optimization", "Multi-language", "Contact Forms", "Blog System"],
+      technologies: ["Next.js", "Strapi", "PostgreSQL", "Vercel", "Cloudinary"],
     },
-    {
-      id: 6,
-      title: "Data Analytics Platform",
-      description:
-        "Advanced analytics platform for business intelligence with interactive charts and reporting features.",
+    analyticsPortal: {
+      title: "Data Analytics Portal",
+      description: "Business intelligence dashboard with advanced data visualization and reporting capabilities.",
+      duration: "5 months",
+      client: "DataInsight Pro",
+      category: "Web Development",
       image: "/data-analytics-dashboard.png",
-      category: "Web Development",
-      technologies: ["React", "D3.js", "Python", "FastAPI"],
-      liveUrl: "#",
-      githubUrl: "#",
+      features: ["Data Visualization", "Custom Reports", "Real-time Analytics", "Export Functions", "User Management"],
+      technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
     },
-    {
-      id: 7,
-      title: "Restaurant Management System",
+    restaurantApp: {
+      title: "Restaurant Management App",
       description:
-        "Complete restaurant management solution with POS integration, inventory tracking, and staff management.",
+        "Complete restaurant management system with order tracking, inventory management, and customer analytics.",
+      duration: "4 months",
+      client: "FoodHub Lagos",
+      category: "Web Development",
       image: "/restaurant-management-dashboard.jpg",
-      category: "Web Development",
-      technologies: ["Vue.js", "Laravel", "MySQL", "Socket.io"],
-      liveUrl: "#",
-      githubUrl: "#",
+      features: [
+        "Order Management",
+        "Inventory Tracking",
+        "Staff Management",
+        "Customer Analytics",
+        "Payment Processing",
+      ],
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
     },
-    {
-      id: 8,
-      title: "Fitness App Interface",
-      description: "Modern fitness tracking app with workout plans, progress monitoring, and social features.",
+    fitnessApp: {
+      title: "Fitness Tracking App",
+      description: "Mobile fitness application with workout planning, progress tracking, and social features.",
+      duration: "5 months",
+      client: "FitLife Nigeria",
+      category: "UI/UX Design",
       image: "/fitness-app-interface.jpg",
-      category: "UI/UX Design",
-      technologies: ["Flutter", "Firebase", "Figma", "Adobe XD"],
-      liveUrl: "#",
-      githubUrl: "#",
+      features: ["Workout Planning", "Progress Tracking", "Social Features", "Nutrition Guide", "Personal Trainer"],
+      technologies: ["React Native", "Firebase", "Redux", "Expo", "Stripe"],
     },
-    {
-      id: 9,
+    educationPlatform: {
       title: "Online Learning Platform",
-      description:
-        "Comprehensive e-learning platform with video streaming, progress tracking, and interactive quizzes.",
-      image: "/online-learning-platform.jpg",
+      description: "Comprehensive e-learning platform with video streaming, assessments, and progress tracking.",
+      duration: "6 months",
+      client: "EduTech Africa",
       category: "Web Development",
-      technologies: ["React", "Node.js", "MongoDB", "AWS S3"],
-      liveUrl: "#",
-      githubUrl: "#",
+      image: "/online-learning-platform.jpg",
+      features: ["Video Streaming", "Interactive Quizzes", "Progress Tracking", "Certificates", "Discussion Forums"],
+      technologies: ["Next.js", "Node.js", "PostgreSQL", "AWS S3", "WebRTC"],
     },
-    {
-      id: 10,
+    travelApp: {
       title: "Travel Booking Interface",
-      description: "Intuitive travel booking platform with advanced search filters and seamless payment integration.",
-      image: "/travel-booking-interface.jpg",
+      description: "Modern travel booking application with intuitive search, booking flow, and trip management.",
+      duration: "3 months",
+      client: "WanderWise Travel",
       category: "UI/UX Design",
-      technologies: ["React", "Redux", "Stripe", "Google Maps API"],
-      liveUrl: "#",
-      githubUrl: "#",
+      image: "/travel-booking-interface.jpg",
+      features: ["Flight Search", "Hotel Booking", "Trip Planning", "Price Alerts", "Travel Guides"],
+      technologies: ["Figma", "Adobe XD", "Principle", "InVision", "Sketch"],
     },
-  ]
-
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((project) =>
-          activeFilter === "web"
-            ? project.category === "Web Development"
-            : activeFilter === "design"
-              ? project.category === "UI/UX Design"
-              : project.category === activeFilter,
-        )
+  }
 
   const skills = [
-    { name: "Frontend Development", level: 95, icon: <Monitor className="h-5 w-5" /> },
-    { name: "Backend Development", level: 90, icon: <Database className="h-5 w-5" /> },
-    { name: "UI/UX Design", level: 85, icon: <Palette className="h-5 w-5" /> },
-    { name: "Mobile Development", level: 80, icon: <Smartphone className="h-5 w-5" /> },
-    { name: "Cloud Services", level: 85, icon: <Cloud className="h-5 w-5" /> },
-    { name: "Cybersecurity", level: 88, icon: <Lock className="h-5 w-5" /> },
-    { name: "DevOps", level: 75, icon: <Cpu className="h-5 w-5" /> },
-    { name: "API Development", level: 92, icon: <Wifi className="h-5 w-5" /> },
+    { name: "React/Next.js", level: 95, category: "Frontend" },
+    { name: "Node.js", level: 90, category: "Backend" },
+    { name: "Python", level: 88, category: "Backend" },
+    { name: "UI/UX Design", level: 85, category: "Design" },
+    { name: "Cybersecurity", level: 82, category: "Security" },
+    { name: "MongoDB", level: 87, category: "Database" },
+    { name: "PostgreSQL", level: 85, category: "Database" },
+    { name: "AWS/Cloud", level: 80, category: "DevOps" },
   ]
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
+      name: "Adebayo Johnson",
+      role: "CEO, TechMart Nigeria",
       content:
         "Favour delivered an exceptional e-commerce platform that exceeded our expectations. The attention to detail and technical expertise is outstanding.",
+      rating: 5,
+      image: "/professional-african-businessman.png",
+    },
+    {
+      name: "Sarah Williams",
+      role: "CTO, SecureNet Solutions",
+      content:
+        "The cybersecurity dashboard Favour built has significantly improved our threat detection capabilities. Highly recommended!",
       rating: 5,
       image: "/professional-african-businesswoman.png",
     },
     {
       name: "Michael Chen",
-      role: "CTO, DataFlow Solutions",
+      role: "Product Manager, PayFlow Africa",
       content:
-        "Working with Favour was a game-changer for our cybersecurity infrastructure. Professional, reliable, and incredibly skilled.",
+        "Working with Favour on our brand identity was a game-changer. The designs perfectly captured our vision and values.",
       rating: 5,
       image: "/professional-asian-businessman.jpg",
-    },
-    {
-      name: "David Okafor",
-      role: "Founder, NigeriaFintech",
-      content:
-        "The mobile app design Favour created for us resulted in a 40% increase in user engagement. Highly recommended!",
-      rating: 5,
-      image: "/professional-african-businessman.png",
     },
   ]
 
   const experience = [
     {
-      year: "2023 - Present",
-      title: "Senior Full Stack Developer",
+      year: "2024",
+      title: "Senior Full-Stack Developer",
       company: "Freelance",
-      description:
-        "Leading complex web development projects and mentoring junior developers while delivering high-quality solutions for international clients.",
-      icon: <Rocket className="h-5 w-5" />,
+      description: "Leading complex web development projects and cybersecurity consulting for enterprise clients.",
     },
     {
-      year: "2021 - 2023",
-      title: "Full Stack Developer",
-      company: "TechCorp Nigeria",
-      description:
-        "Developed and maintained multiple web applications using React, Node.js, and cloud technologies, serving over 10,000 users.",
-      icon: <Code className="h-5 w-5" />,
+      year: "2023",
+      title: "Full-Stack Developer",
+      company: "TechHub Lagos",
+      description: "Developed scalable web applications and implemented security best practices for fintech clients.",
     },
     {
-      year: "2020 - 2021",
+      year: "2022",
       title: "Frontend Developer",
       company: "Digital Solutions Ltd",
-      description:
-        "Specialized in creating responsive and accessible user interfaces with modern JavaScript frameworks and design systems.",
-      icon: <Monitor className="h-5 w-5" />,
+      description: "Created responsive web interfaces and improved user experience for various client projects.",
     },
     {
-      year: "2019 - 2020",
+      year: "2021",
       title: "Junior Developer",
-      company: "StartupHub Lagos",
-      description:
-        "Started my professional journey building websites and learning full-stack development in a fast-paced startup environment.",
-      icon: <GraduationCap className="h-5 w-5" />,
+      company: "StartupLab",
+      description: "Built foundational skills in web development and contributed to multiple startup projects.",
     },
   ]
 
@@ -668,204 +354,185 @@ export default function Portfolio() {
     {
       question: "What services do you offer?",
       answer:
-        "I offer comprehensive web development, UI/UX design, cybersecurity consulting, business writing, and virtual assistant services. Each service is tailored to meet your specific business needs and objectives.",
+        "I offer comprehensive web development, cybersecurity consulting, UI/UX design, business writing, and virtual assistant services. Each service is tailored to meet your specific business needs.",
     },
     {
       question: "How long does a typical project take?",
       answer:
-        "Project timelines vary based on complexity and scope. A simple website might take 2-4 weeks, while a complex web application could take 2-3 months. I provide detailed timelines during our initial consultation.",
+        "Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex applications can take 2-6 months. I provide detailed timelines during our initial consultation.",
     },
     {
-      question: "Do you work with international clients?",
+      question: "What is your pricing structure?",
       answer:
-        "Yes! I work with clients globally and am experienced in remote collaboration. I'm available across different time zones and use modern communication tools to ensure smooth project delivery.",
+        "Pricing depends on project scope, complexity, and timeline. I offer competitive rates starting from ₦50,000 for basic projects. Contact me for a detailed quote based on your specific requirements.",
     },
     {
-      question: "What is your development process?",
+      question: "Do you provide ongoing support and maintenance?",
       answer:
-        "My process includes: 1) Discovery and planning, 2) Design and prototyping, 3) Development and testing, 4) Review and feedback, 5) Launch and support. I keep you involved at every step.",
+        "Yes, I offer ongoing support and maintenance packages to ensure your project continues to perform optimally. This includes updates, security patches, and technical support.",
     },
     {
-      question: "Do you provide ongoing support?",
+      question: "Can you work with international clients?",
       answer:
-        "I offer various support packages including bug fixes, updates, security monitoring, and feature enhancements. Support terms are discussed during project planning.",
+        "I work with clients globally and am experienced in remote collaboration. I'm available across different time zones and use modern communication tools for seamless project management.",
     },
     {
-      question: "What technologies do you specialize in?",
+      question: "What makes your cybersecurity services unique?",
       answer:
-        "I specialize in React, Next.js, Node.js, TypeScript, Python, and modern cloud technologies. I stay updated with the latest trends and choose the best tech stack for each project.",
-    },
-    {
-      question: "How do you handle project communication?",
-      answer:
-        "I use a combination of email, WhatsApp, video calls, and project management tools. You'll receive regular updates and have direct access to me throughout the project lifecycle.",
-    },
-    {
-      question: "Can you help with existing projects?",
-      answer:
-        "Yes! I can help improve, debug, or add features to existing projects. I'll first analyze your current setup and provide recommendations for the best path forward.",
+        "My cybersecurity approach combines technical expertise with business understanding. I provide comprehensive assessments, practical recommendations, and ongoing monitoring to protect your digital assets effectively.",
     },
   ]
 
+  const [showProjectModal, setShowProjectModal] = useState<string | null>(null)
+  const [projectFilter, setProjectFilter] = useState<string>("all")
+
   return (
-    <div className={`min-h-screen transition-all duration-500 ${isDarkMode ? "dark" : ""}`}>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
+    <div className="bg-background min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-primary py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center space-x-2 group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-primary-foreground font-bold text-lg">FT</span>
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">FT</span>
               </div>
               <span className="font-bold text-xl text-foreground">FAVTECH</span>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 font-medium"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 font-medium"
-              >
+            <nav className="hidden lg:flex items-center space-x-8">
+              <a href="#services" className="text-foreground hover:text-primary-foreground transition-colors">
                 Services
-              </button>
-              <button
-                onClick={() => scrollToSection("portfolio")}
-                className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 font-medium"
-              >
+              </a>
+              <a href="#portfolio" className="text-foreground hover:text-primary-foreground transition-colors">
                 Portfolio
-              </button>
-              <button
-                onClick={() => scrollToSection("experience")}
-                className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 font-medium"
-              >
+              </a>
+              <a href="#skills" className="text-foreground hover:text-primary-foreground transition-colors">
+                Skills
+              </a>
+              <a href="#experience" className="text-foreground hover:text-primary-foreground transition-colors">
                 Experience
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 font-medium"
-              >
+              </a>
+              <a href="#testimonials" className="text-foreground hover:text-primary-foreground transition-colors">
+                Testimonials
+              </a>
+              <a href="#faq" className="text-foreground hover:text-primary-foreground transition-colors">
+                FAQ
+              </a>
+              <a href="#contact" className="text-foreground hover:text-primary-foreground transition-colors">
                 Contact
-              </button>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="hover:bg-primary/10 transition-all duration-300 hover:scale-110"
-              >
-                {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </Button>
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transform transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                Get Started
-              </Button>
-            </div>
+              </a>
+            </nav>
 
-            {/* Mobile menu button and theme toggle */}
-            <div className="md:hidden flex items-center space-x-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="hover:bg-primary/10 transition-all duration-300"
-              >
-                {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="icon" onClick={() => setIsDark(!isDark)}>
+                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
               <Button
-                variant="ghost"
                 size="icon"
-                onClick={toggleMenu}
-                className="hover:bg-primary/10 transition-all duration-300"
+                variant="outline"
+                className="lg:hidden hover:bg-primary hover:text-primary-foreground bg-transparent"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          <div
-            className={`md:hidden transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-            } overflow-hidden`}
-          >
-            <div className="py-4 space-y-3 border-t border-border">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-all duration-300"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-all duration-300"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("portfolio")}
-                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-all duration-300"
-              >
-                Portfolio
-              </button>
-              <button
-                onClick={() => scrollToSection("experience")}
-                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-all duration-300"
-              >
-                Experience
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-all duration-300"
-              >
-                Contact
-              </button>
-              <div className="px-4 pt-2">
-                <Button
-                  onClick={() => scrollToSection("contact")}
-                  className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300"
-                >
-                  Get Started
-                </Button>
-              </div>
             </div>
           </div>
         </div>
-      </nav>
+      </header>
 
-      {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Hi, I'm <span className="text-primary">Omeiri Favour</span>
-          </h1>
-
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8">Full Stack Developer & UI/UX Designer</p>
-
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            I create beautiful, functional websites and applications that deliver exceptional user experiences.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={() => scrollToSection("portfolio")}>
-              View My Work
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection("contact")}>
-              Get In Touch
-            </Button>
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-background border-b border-border py-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="flex flex-col space-y-2">
+              <a
+                href="#services"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </a>
+              <a
+                href="#portfolio"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Portfolio
+              </a>
+              <a
+                href="#skills"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Skills
+              </a>
+              <a
+                href="#experience"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Experience
+              </a>
+              <a
+                href="#testimonials"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Testimonials
+              </a>
+              <a
+                href="#faq"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                FAQ
+              </a>
+              <a
+                href="#contact"
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+            </nav>
           </div>
         </div>
-      </section>
+      )}
 
       {/* Main Content */}
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+          <section className="relative overflow-hidden rounded-3xl">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-20"
+              style={{ backgroundImage: "url('/modern-tech-office-workspace-with-developers-codin.jpg')" }}
+            />
+            <div className="relative bg-gradient-to-r from-primary/90 to-primary/70 py-20 px-8 text-center">
+              <h1 className="text-4xl lg:text-6xl font-bold text-primary-foreground mb-6">
+                Building Digital Excellence
+              </h1>
+              <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+                Full-stack developer and cybersecurity expert delivering innovative solutions for modern businesses
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                >
+                  Start Your Project
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  onClick={downloadCV}
+                >
+                  Download CV
+                </Button>
+              </div>
+            </div>
+          </section>
+
           {/* Services Section */}
           <section id="services" className="space-y-8">
             <div className="text-center">
@@ -875,26 +542,33 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <Card key={index} className="p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                  <CardContent className="p-0">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                        {service.icon}
+              {Object.entries(serviceDetails).map(([key, service]) => {
+                const IconComponent = service.icon
+                return (
+                  <Card
+                    key={key}
+                    className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
+                    onClick={() => setShowServiceModal(key)}
+                  >
+                    <CardContent className="p-0">
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                          <IconComponent className="h-6 w-6 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-card-foreground">{service.title}</h3>
                       </div>
-                      <h3 className="text-xl font-semibold text-card-foreground">{service.title}</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {service.features.map((feature, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      <p className="text-muted-foreground mb-4">{service.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {service.technologies.slice(0, 3).map((tech, index) => (
+                          <Badge key={index} variant="outline" className="text-xs">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </div>
           </section>
 
@@ -910,91 +584,63 @@ export default function Portfolio() {
             <div className="flex justify-center mb-8">
               <div className="flex flex-wrap gap-2 bg-muted p-1 rounded-lg">
                 <Button
-                  variant={activeFilter === "all" ? "default" : "ghost"}
+                  variant={projectFilter === "all" ? "default" : "ghost"}
                   size="sm"
-                  onClick={() => setActiveFilter("all")}
+                  onClick={() => setProjectFilter("all")}
                   className="rounded-md"
                 >
                   All Projects
                 </Button>
                 <Button
-                  variant={activeFilter === "web" ? "default" : "ghost"}
+                  variant={projectFilter === "Web Development" ? "default" : "ghost"}
                   size="sm"
-                  onClick={() => setActiveFilter("web")}
+                  onClick={() => setProjectFilter("Web Development")}
                   className="rounded-md"
                 >
                   Web Development
                 </Button>
                 <Button
-                  variant={activeFilter === "design" ? "default" : "ghost"}
+                  variant={projectFilter === "UI/UX Design" ? "default" : "ghost"}
                   size="sm"
-                  onClick={() => setActiveFilter("design")}
+                  onClick={() => setProjectFilter("UI/UX Design")}
                   className="rounded-md"
                 >
                   UI/UX Design
-                </Button>
-                <Button
-                  variant={activeFilter === "cybersecurity" ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => setActiveFilter("cybersecurity")}
-                  className="rounded-md"
-                >
-                  Cybersecurity
                 </Button>
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProjects.map((project) => (
-                <Card
-                  key={project.id}
-                  className="overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                >
-                  <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-card-foreground">{project.title}</h3>
-                      <Badge variant="secondary" className="text-xs">
-                        {project.category}
-                      </Badge>
+              {Object.entries(projectDetails)
+                .filter(([key, project]) => projectFilter === "all" || project.category === projectFilter)
+                .map(([key, project]) => (
+                  <Card
+                    key={key}
+                    className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                    onClick={() => setShowProjectModal(key)}
+                  >
+                    <div className="aspect-video bg-muted relative overflow-hidden">
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex space-x-2">
-                        {project.technologies?.slice(0, 3).map((tech, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xl font-semibold text-card-foreground">{project.title}</h3>
+                        <Badge variant="secondary" className="text-xs">
+                          {project.category}
+                        </Badge>
                       </div>
-                      <div className="flex items-center">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors mr-4"
-                        >
-                          Live Demo <ExternalLink className="h-4 w-4 inline-block ml-1" />
-                        </a>
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          GitHub <Github className="h-4 w-4 inline-block ml-1" />
-                        </a>
+                      <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-muted-foreground">{project.client}</span>
+                        <Badge variant="outline">{project.duration}</Badge>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
             </div>
           </section>
 
@@ -1013,11 +659,13 @@ export default function Portfolio() {
                     <span className="font-medium text-foreground">{skill.name}</span>
                     <span className="text-sm text-muted-foreground">{skill.level}%</span>
                   </div>
-                  <Progress value={skill.level} className="h-2 rounded-full" />
-                  <div className="flex items-center space-x-2">
-                    {skill.icon}
-                    <span className="text-xs text-muted-foreground">Category</span>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div
+                      className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${skill.level}%` }}
+                    />
                   </div>
+                  <span className="text-xs text-muted-foreground">{skill.category}</span>
                 </div>
               ))}
             </div>
@@ -1038,10 +686,10 @@ export default function Portfolio() {
                   <div key={index} className="relative flex items-center">
                     <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
                     <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? "md:mr-1/2 md:pr-8" : "md:ml-1/2 md:pl-8"}`}>
-                      <Card className="p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                      <Card className="p-6">
                         <CardContent className="p-0">
                           <div className="flex items-center mb-2">
-                            {exp.icon}
+                            <Calendar className="h-4 w-4 text-primary mr-2" />
                             <span className="text-sm font-medium text-primary">{exp.year}</span>
                           </div>
                           <h3 className="text-xl font-semibold text-card-foreground mb-1">{exp.title}</h3>
@@ -1064,7 +712,7 @@ export default function Portfolio() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Card key={index} className="p-6">
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -1100,11 +748,7 @@ export default function Portfolio() {
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border border-border rounded-lg px-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                  >
+                  <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6">
                     <AccordionTrigger className="text-left hover:no-underline py-4">
                       <span className="font-medium text-foreground">{faq.question}</span>
                     </AccordionTrigger>
@@ -1128,26 +772,26 @@ export default function Portfolio() {
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Contact Information */}
               <div className="space-y-6">
-                <Card className="p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Card className="p-6">
                   <CardContent className="p-0">
                     <h3 className="text-xl font-semibold text-card-foreground mb-4">Get in Touch</h3>
                     <div className="space-y-4">
-                      <div className="flex items-center group">
-                        <Phone className="h-5 w-5 text-primary mr-3 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="flex items-center">
+                        <Phone className="h-5 w-5 text-primary mr-3" />
                         <div>
                           <p className="font-medium text-foreground">Phone</p>
                           <p className="text-sm text-muted-foreground">+234 906 047 4709</p>
                         </div>
                       </div>
-                      <div className="flex items-center group">
-                        <Mail className="h-5 w-5 text-primary mr-3 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="flex items-center">
+                        <Mail className="h-5 w-5 text-primary mr-3" />
                         <div>
                           <p className="font-medium text-foreground">Email</p>
-                          <p className="text-sm text-muted-foreground">favouromeiri5@gmail.com</p>
+                          <p className="text-sm text-muted-foreground">hello@favtech.dev</p>
                         </div>
                       </div>
-                      <div className="flex items-center group">
-                        <Location className="h-5 w-5 text-primary mr-3 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="flex items-center">
+                        <Location className="h-5 w-5 text-primary mr-3" />
                         <div>
                           <p className="font-medium text-foreground">Location</p>
                           <p className="text-sm text-muted-foreground">Lagos, Nigeria</p>
@@ -1157,31 +801,31 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
 
-                <Card className="p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Card className="p-6">
                   <CardContent className="p-0">
                     <h3 className="text-xl font-semibold text-card-foreground mb-4">Social Links</h3>
                     <div className="flex gap-3">
                       <Button
                         size="icon"
                         variant="outline"
-                        className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
-                        onClick={() => window.open("https://www.linkedin.com/in/omeiri-favour-620a582a6/", "_blank")}
+                        className="hover:bg-primary hover:text-primary-foreground bg-transparent"
+                        onClick={() => window.open("https://linkedin.com/in/favouromeiri", "_blank")}
                       >
                         <Linkedin className="h-5 w-5" />
                       </Button>
                       <Button
                         size="icon"
                         variant="outline"
-                        className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
-                        onClick={() => window.open("https://github.com/favouritesss", "_blank")}
+                        className="hover:bg-primary hover:text-primary-foreground bg-transparent"
+                        onClick={() => window.open("https://github.com/favouromeiri", "_blank")}
                       >
                         <Github className="h-5 w-5" />
                       </Button>
                       <Button
                         size="icon"
                         variant="outline"
-                        className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
-                        onClick={() => window.open("https://x.com/that_tech_bee?s=21", "_blank")}
+                        className="hover:bg-primary hover:text-primary-foreground bg-transparent"
+                        onClick={() => window.open("https://twitter.com/favouromeiri", "_blank")}
                       >
                         <Twitter className="h-5 w-5" />
                       </Button>
@@ -1192,7 +836,7 @@ export default function Portfolio() {
 
               {/* Contact Form */}
               <div className="lg:col-span-2">
-                <Card className="p-6 lg:p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Card className="p-6 lg:p-8">
                   <CardContent className="p-0">
                     {submitStatus === "success" && (
                       <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
@@ -1216,34 +860,26 @@ export default function Portfolio() {
                       </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleFormSubmit} className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                            Name *
-                          </Label>
+                          <label className="block text-sm font-medium text-foreground mb-2">Name *</label>
                           <Input
                             type="text"
-                            id="name"
-                            name="name"
                             placeholder="Your full name"
                             value={formData.name}
-                            onChange={handleInputChange}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             required
                             className="bg-background"
                           />
                         </div>
                         <div>
-                          <Label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                            Email *
-                          </Label>
+                          <label className="block text-sm font-medium text-foreground mb-2">Email *</label>
                           <Input
                             type="email"
-                            id="email"
-                            name="email"
                             placeholder="your.email@example.com"
                             value={formData.email}
-                            onChange={handleInputChange}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required
                             className="bg-background"
                           />
@@ -1252,30 +888,22 @@ export default function Portfolio() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                            Phone
-                          </Label>
+                          <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
                           <Input
                             type="tel"
-                            id="phone"
-                            name="phone"
                             placeholder="+234 xxx xxx xxxx"
                             value={formData.phone}
-                            onChange={handleInputChange}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             className="bg-background"
                           />
                         </div>
                         <div>
-                          <Label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                            Company
-                          </Label>
+                          <label className="block text-sm font-medium text-foreground mb-2">Company</label>
                           <Input
                             type="text"
-                            id="company"
-                            name="company"
                             placeholder="Your company name"
                             value={formData.company}
-                            onChange={handleInputChange}
+                            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             className="bg-background"
                           />
                         </div>
@@ -1283,12 +911,10 @@ export default function Portfolio() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="projectType" className="block text-sm font-medium text-foreground mb-2">
-                            Project Type *
-                          </Label>
+                          <label className="block text-sm font-medium text-foreground mb-2">Project Type *</label>
                           <Select
                             value={formData.projectType}
-                            onValueChange={(value) => handleSelectChange("projectType", value)}
+                            onValueChange={(value) => setFormData({ ...formData, projectType: value })}
                           >
                             <SelectTrigger>
                               <SelectValue placeholder="Select project type" />
@@ -1304,12 +930,10 @@ export default function Portfolio() {
                           </Select>
                         </div>
                         <div>
-                          <Label htmlFor="timeline" className="block text-sm font-medium text-foreground mb-2">
-                            Timeline
-                          </Label>
+                          <label className="block text-sm font-medium text-foreground mb-2">Timeline</label>
                           <Select
                             value={formData.timeline}
-                            onValueChange={(value) => handleSelectChange("timeline", value)}
+                            onValueChange={(value) => setFormData({ ...formData, timeline: value })}
                           >
                             <SelectTrigger>
                               <SelectValue placeholder="Project timeline" />
@@ -1327,10 +951,11 @@ export default function Portfolio() {
                       </div>
 
                       <div>
-                        <Label htmlFor="budget" className="block text-sm font-medium text-foreground mb-2">
-                          Budget Range (NGN) *
-                        </Label>
-                        <Select value={formData.budget} onValueChange={(value) => handleSelectChange("budget", value)}>
+                        <label className="block text-sm font-medium text-foreground mb-2">Budget Range (NGN) *</label>
+                        <Select
+                          value={formData.budget}
+                          onValueChange={(value) => setFormData({ ...formData, budget: value })}
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Select your budget range" />
                           </SelectTrigger>
@@ -1344,16 +969,12 @@ export default function Portfolio() {
                       </div>
 
                       <div>
-                        <Label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                          Project Details *
-                        </Label>
+                        <label className="block text-sm font-medium text-foreground mb-2">Project Details *</label>
                         <Textarea
-                          id="message"
-                          name="message"
                           placeholder="Tell me about your project requirements, goals, timeline, and any specific features you need..."
                           rows={5}
                           value={formData.message}
-                          onChange={handleInputChange}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           required
                           className="bg-background"
                         />
@@ -1367,7 +988,7 @@ export default function Portfolio() {
                       >
                         {isSubmitting ? (
                           <>
-                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
                             Sending...
                           </>
                         ) : (
@@ -1391,8 +1012,8 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8 lg:mb-12">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-2 mb-4 group">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-primary-foreground font-bold text-sm">FT</span>
                 </div>
                 <span className="font-bold text-xl text-foreground">FAVTECH</span>
@@ -1405,24 +1026,24 @@ export default function Portfolio() {
                 <Button
                   size="icon"
                   variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
-                  onClick={() => window.open("https://www.linkedin.com/in/omeiri-favour-620a582a6/", "_blank")}
+                  className="hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  onClick={() => window.open("https://linkedin.com/in/favouromeiri", "_blank")}
                 >
                   <Linkedin className="h-5 w-5" />
                 </Button>
                 <Button
                   size="icon"
                   variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
-                  onClick={() => window.open("https://github.com/favouritesss", "_blank")}
+                  className="hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  onClick={() => window.open("https://github.com/favouromeiri", "_blank")}
                 >
                   <Github className="h-5 w-5" />
                 </Button>
                 <Button
                   size="icon"
                   variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground bg-transparent transform transition-all duration-300 hover:scale-110 hover:rotate-6"
-                  onClick={() => window.open("https://x.com/that_tech_bee?s=21", "_blank")}
+                  className="hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  onClick={() => window.open("https://twitter.com/favouromeiri", "_blank")}
                 >
                   <Twitter className="h-5 w-5" />
                 </Button>
@@ -1434,44 +1055,29 @@ export default function Portfolio() {
               <h4 className="font-semibold text-foreground mb-4">Services</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <button
-                    onClick={() => scrollToSection("services")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
                     Web Development
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => scrollToSection("services")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
                     Cybersecurity
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => scrollToSection("services")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
                     UI/UX Design
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => scrollToSection("services")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
                     Business Writing
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => scrollToSection("services")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
                     Virtual Assistant
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -1481,28 +1087,19 @@ export default function Portfolio() {
               <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <button
-                    onClick={() => scrollToSection("about")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
                     About
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => scrollToSection("portfolio")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#portfolio" className="text-muted-foreground hover:text-foreground transition-colors">
                     Portfolio
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => scrollToSection("contact")}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-left"
-                  >
+                  <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
                     Contact
-                  </button>
+                  </a>
                 </li>
                 <li>
                   <button
@@ -1526,7 +1123,7 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-muted-foreground hover:text-foreground transform transition-all duration-300 hover:scale-105"
+                  className="text-muted-foreground hover:text-foreground"
                   onClick={openWhatsApp}
                 >
                   <MessageCircle className="h-4 w-4 mr-2" />
@@ -1537,6 +1134,170 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button
+          size="lg"
+          className="rounded-full w-14 h-14 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+          onClick={openWhatsApp}
+        >
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      </div>
+
+      {/* Service Modal */}
+      {showServiceModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <CardContent className="p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-heading text-xl lg:text-2xl font-bold text-card-foreground">
+                  {serviceDetails[showServiceModal as keyof typeof serviceDetails]?.title}
+                </h3>
+                <Button variant="ghost" size="sm" onClick={() => setShowServiceModal(null)}>
+                  <X className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <p className="text-muted-foreground mb-6">
+                {serviceDetails[showServiceModal as keyof typeof serviceDetails]?.description}
+              </p>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-heading font-semibold text-card-foreground mb-3">Key Features:</h4>
+                  <div className="grid gap-2">
+                    {serviceDetails[showServiceModal as keyof typeof serviceDetails]?.features.map((feature, index) => (
+                      <div key={index} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-heading font-semibold text-card-foreground mb-3">Technologies & Tools:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {serviceDetails[showServiceModal as keyof typeof serviceDetails]?.technologies.map(
+                      (tech, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ),
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex gap-3 mt-8">
+                <Button
+                  className="flex-1"
+                  onClick={() => {
+                    setShowServiceModal(null)
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                >
+                  Get Started
+                </Button>
+                <Button variant="outline" onClick={openWhatsApp}>
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  Chat on WhatsApp
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {showProjectModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-foreground">
+                  {projectDetails[showProjectModal as keyof typeof projectDetails]?.title}
+                </h2>
+                <Button variant="ghost" size="icon" onClick={() => setShowProjectModal(null)}>
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                  <img
+                    src={projectDetails[showProjectModal as keyof typeof projectDetails]?.image || "/placeholder.svg"}
+                    alt={projectDetails[showProjectModal as keyof typeof projectDetails]?.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground">
+                    {projectDetails[showProjectModal as keyof typeof projectDetails]?.description}
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">Duration:</h3>
+                      <p className="text-muted-foreground">
+                        {projectDetails[showProjectModal as keyof typeof projectDetails]?.duration}
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">Client:</h3>
+                      <p className="text-muted-foreground">
+                        {projectDetails[showProjectModal as keyof typeof projectDetails]?.client}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-foreground mb-3">Key Features:</h3>
+                  <div className="grid md:grid-cols-2 gap-2">
+                    {projectDetails[showProjectModal as keyof typeof projectDetails]?.features.map((feature, index) => (
+                      <div key={index} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-foreground mb-3">Technologies:</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {projectDetails[showProjectModal as keyof typeof projectDetails]?.technologies.map(
+                      (tech, index) => (
+                        <Badge key={index} variant="outline">
+                          {tech}
+                        </Badge>
+                      ),
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex gap-4 pt-4">
+                  <Button
+                    className="flex-1 bg-primary hover:bg-primary/90"
+                    onClick={() => {
+                      setShowProjectModal(null)
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                    }}
+                  >
+                    Start Similar Project
+                  </Button>
+                  <Button variant="outline" className="bg-transparent" onClick={openWhatsApp}>
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Discuss Project
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
