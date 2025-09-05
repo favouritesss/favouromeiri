@@ -444,7 +444,7 @@ export default function Portfolio() {
 </header>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-background border-b border-border py-4">
+      <div className="lg:hidden bg-background border-b border-border py-4 fixed top-20 left-0 w-full z-40 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex flex-col space-y-2">
               <a
