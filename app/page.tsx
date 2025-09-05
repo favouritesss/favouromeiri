@@ -386,39 +386,47 @@ export default function Portfolio() {
   return (
     <div className="bg-background min-h-screen flex flex-col">
       {/* Header */}
-      <header className="bg-primary py-6 lg:py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">FT</span>
-              </div>
-              <span className="font-bold text-xl text-foreground">FAVTECH</span>
-            </div>
+     <header className="bg-primary py-6 lg:py-8">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center">
+      
+      {/* Logo */}
+      <div className="flex items-center space-x-2">
+        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          <span className="text-primary-foreground font-bold text-sm">FT</span>
+        </div>
+        <a
+          href="/"
+          className="font-bold text-xl text-foreground hover:text-red-600 transition-colors"
+        >
+          FAVTECH
+        </a>
+      </div>
 
-            <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#services" className="text-foreground hover:text-primary-foreground transition-colors">
-                Services
-              </a>
-              <a href="#portfolio" className="text-foreground hover:text-primary-foreground transition-colors">
-                Portfolio
-              </a>
-              <a href="#skills" className="text-foreground hover:text-primary-foreground transition-colors">
-                Skills
-              </a>
-              <a href="#experience" className="text-foreground hover:text-primary-foreground transition-colors">
-                Experience
-              </a>
-              <a href="#testimonials" className="text-foreground hover:text-primary-foreground transition-colors">
-                Testimonials
-              </a>
-              <a href="#faq" className="text-foreground hover:text-primary-foreground transition-colors">
-                FAQ
-              </a>
-              <a href="#contact" className="text-foreground hover:text-primary-foreground transition-colors">
-                Contact
-              </a>
-            </nav>
+      {/* Navbar Links */}
+      <nav className="hidden lg:flex items-center space-x-8">
+        <a href="#services" className="text-foreground hover:text-primary-foreground transition-colors">
+          Services
+        </a>
+        <a href="#portfolio" className="text-foreground hover:text-primary-foreground transition-colors">
+          Portfolio
+        </a>
+        <a href="#skills" className="text-foreground hover:text-primary-foreground transition-colors">
+          Skills
+        </a>
+        <a href="#experience" className="text-foreground hover:text-primary-foreground transition-colors">
+          Experience
+        </a>
+        <a href="#testimonials" className="text-foreground hover:text-primary-foreground transition-colors">
+          Testimonials
+        </a>
+        <a href="#faq" className="text-foreground hover:text-primary-foreground transition-colors">
+          FAQ
+        </a>
+        <a href="#contact" className="text-foreground hover:text-primary-foreground transition-colors">
+          Contact
+        </a>
+      </nav>
 
             <div className="flex items-center gap-2">
               <Button
