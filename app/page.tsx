@@ -385,8 +385,8 @@ export default function Portfolio() {
 
   return (
     <div className="bg-background min-h-screen flex flex-col">
-      {/* Header */}
-     <header className="bg-primary py-6 lg:py-8">
+    {/* Header */}
+<header className="bg-primary py-6 lg:py-8 fixed top-0 left-0 w-full z-50 shadow-md">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex justify-between items-center">
       
@@ -404,44 +404,44 @@ export default function Portfolio() {
       </div>
 
       {/* Navbar Links */}
-      <nav className="hidden lg:flex items-center space-x-8">
-        <a href="#services" className="text-foreground hover:text-primary-foreground transition-colors">
+      <nav className="hidden lg:flex items-center space-x-8 ml-auto">
+        <a href="#services" className="text-primary-foreground hover:text-foreground transition-colors">
           Services
         </a>
-        <a href="#portfolio" className="text-foreground hover:text-primary-foreground transition-colors">
+        <a href="#portfolio" className="text-primary-foreground hover:text-foreground transition-colors">
           Portfolio
         </a>
-        <a href="#skills" className="text-foreground hover:text-primary-foreground transition-colors">
+        <a href="#skills" className="text-primary-foreground hover:text-foreground transition-colors">
           Skills
         </a>
-        <a href="#experience" className="text-foreground hover:text-primary-foreground transition-colors">
+        <a href="#experience" className="text-primary-foreground hover:text-foreground transition-colors">
           Experience
         </a>
-        <a href="#testimonials" className="text-foreground hover:text-primary-foreground transition-colors">
+        <a href="#testimonials" className="text-primary-foreground hover:text-foreground transition-colors">
           Testimonials
         </a>
-        <a href="#faq" className="text-foreground hover:text-primary-foreground transition-colors">
+        <a href="#faq" className="text-primary-foreground hover:text-foreground transition-colors">
           FAQ
         </a>
-        <a href="#contact" className="text-foreground hover:text-primary-foreground transition-colors">
+        <a href="#contact" className="text-primary-foreground hover:text-foreground transition-colors">
           Contact
         </a>
       </nav>
 
-            <div className="flex items-center gap-2">
-              <Button
-                size="icon"
-                variant="outline"
-                className="lg:hidden hover:bg-primary hover:text-primary-foreground bg-transparent"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label="Toggle Menu"
-              >
-                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <div className="flex items-center gap-2">
+        <Button
+          size="icon"
+          variant="outline"
+          className="lg:hidden hover:bg-primary hover:text-primary-foreground bg-transparent"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
+      </div>
+    </div>
+  </div>
+</header>
 
       {mobileMenuOpen && (
         <div className="lg:hidden bg-background border-b border-border py-4">
