@@ -502,8 +502,8 @@ export default function Portfolio() {
       )}
 
       {/* Main Content */}
-      <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+      <main className="flex-1 pt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
           <section className="relative overflow-hidden rounded-3xl">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-20"
