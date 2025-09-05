@@ -48,7 +48,7 @@ export default function Portfolio() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   // 🔧 Email delivery via Formspree
-  const FORMSPREE_FORM_ID = "yourFormID" // <-- replace with your Formspree ID, e.g. "moqbkwkz"
+  const FORMSPREE_FORM_ID = "mqadgvan"
 
   const openWhatsApp = () => {
     window.open("https://wa.me/2349060474709", "_blank")
