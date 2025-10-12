@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useState, useEffect } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   Send,
@@ -98,6 +99,47 @@ export default function Portfolio() {
       setTimeout(() => setSubmitStatus("idle"), 5000)
     }
   }
+   useEffect(() => {
+    // avoid injecting twice
+    if (document.getElementById("smartsupp-init")) return
+
+    // Inline initialization script (this will create the loader script itself)
+    const initScript = document.createElement("script")
+    initScript.id = "smartsupp-init"
+    initScript.type = "text/javascript"
+    initScript.text = `
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = 'e89083428cb10611a0d4a823a56b601643ed3b3d';
+      window.smartsupp || (function(d) {
+        var s, c, o = smartsupp = function() { o._.push(arguments) }; o._ = [];
+        s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
+        c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
+        c.src = 'https://www.smartsuppchat.com/loader.js?';
+        s.parentNode.insertBefore(c, s);
+      })(document);
+    `
+    document.head.appendChild(initScript)
+
+    // Add a noscript fallback (optional)
+    const ns = document.createElement("noscript")
+    ns.id = "smartsupp-noscript"
+    ns.innerHTML = 'Powered by <a href="https://www.smartsupp.com" target="_blank" rel="noopener noreferrer">Smartsupp</a>'
+    document.head.appendChild(ns)
+
+    return () => {
+      // cleanup on unmount
+      const s = document.getElementById("smartsupp-init")
+      if (s) s.remove()
+      const n = document.getElementById("smartsupp-noscript")
+      if (n) n.remove()
+      // also try to remove loader if it was created
+      const loader = document.querySelector('script[src^="https://www.smartsuppchat.com/loader.js"]')
+      if (loader) loader.remove()
+      // remove global var if you want to avoid leftover
+      try { delete (window as any).smartsupp } catch (e) {}
+      try { delete (window as any)._smartsupp } catch (e) {}
+    }
+  }, [])
 
   const serviceDetails = {
     webDevelopment: {
