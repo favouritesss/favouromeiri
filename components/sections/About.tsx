@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Shield, Code, Palette, Zap } from "lucide-react"
+import { Shield, Code, Palette, Zap, FileText } from "lucide-react"
 
 export default function About() {
     const cards = [
@@ -19,6 +19,11 @@ export default function About() {
             icon: Palette,
             title: "UI/UX & Graphics",
             description: "Designing intuitive interfaces and professional graphics with Figma, Photoshop, and Corel Draw."
+        },
+        {
+            icon: FileText,
+            title: "VA & Content Services",
+            description: "Expert virtual assistance, CV compilation, copywriting, assignment writing, and content management."
         }
     ]
 
@@ -32,7 +37,7 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {cards.map((card, index) => (
                         <Card key={index} className="glass-card hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-background/50">
                             <CardContent className="p-8 text-center space-y-4">

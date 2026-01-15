@@ -6,28 +6,28 @@ import { Calendar } from "lucide-react"
 export default function Experience() {
     const experience = [
         {
-            year: "2024 - Present",
-            title: "Senior Full-Stack Developer",
-            company: "Freelance / Consultant",
-            description: "Leading complex web development projects and cybersecurity consulting for enterprise clients. Specializing in secure, scalable React applications."
+            year: "01/2025 – 08/2025",
+            title: "Full Stack Developer & Penetration Tester",
+            company: "Aptech",
+            description: "Developed responsive web applications using React, Python, and PHP. Conducted penetration testing to enhance security by 20%. Designed UI/UX prototypes with Figma and optimized RESTful APIs/SQL databases."
         },
         {
-            year: "2023",
-            title: "Full-Stack Developer",
-            company: "TechHub Lagos",
-            description: "Developed scalable web applications and implemented security best practices for fintech clients."
+            year: "01/2023 – 12/2024",
+            title: "Virtual Assistant",
+            company: "TLO LLC Company",
+            description: "Managed client communications via digital platforms, increasing engagement by 30%. Coordinated digital tasks using Google Suite and created engaging content for online platforms."
         },
         {
-            year: "2022",
-            title: "Frontend Developer",
-            company: "Digital Solutions Ltd",
-            description: "Created responsive web interfaces and improved user experience for various client projects using React and Tailwind."
+            year: "01/2020 – 07/2021",
+            title: "Computer Instructor",
+            company: "Freedom Communications Nig.",
+            description: "Taught Computer Appreciation Skills and digital literacy with a 95% student pass rate. Developed instructional content and provided coaching on digital tools."
         },
         {
-            year: "2021",
-            title: "Junior Developer",
-            company: "StartupLab",
-            description: "Built foundational skills in web development and contributed to multiple startup projects."
+            year: "01/2019 – 12/2019",
+            title: "Computer Operator",
+            company: "Jiomax Computer Institute",
+            description: "Managed client inquiries and digital tasks, improving efficiency by 15%. Handled content formatting, uploads, and system troubleshooting."
         }
     ]
 
