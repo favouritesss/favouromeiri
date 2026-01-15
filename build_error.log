@@ -1,0 +1,33 @@
+
+> my-v0-project@0.1.0 build C:\Users\HP\Desktop\portfoli\favouromeiri
+> next build
+
+  ▲ Next.js 14.2.16
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./components/sections/Footer.tsx
+Error: 
+  [31mx[0m Unexpected token `footer`. Expected jsx identifier
+   ,-[[36;1;4mC:\Users\HP\Desktop\portfoli\favouromeiri\components\sections\Footer.tsx[0m:4:1]
+ [2m4[0m | 
+ [2m5[0m | export default function Footer() {
+ [2m6[0m |     return (
+ [2m7[0m |         <footer className="bg-muted py-12 border-t border-border">
+   : [31;1m         ^^^^^^[0m
+ [2m8[0m |             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+ [2m9[0m |                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+ [2m9[0m | 
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/sections/Footer.tsx
+./app/page.tsx
+
+
+> Build failed because of webpack errors
+ ELIFECYCLE  Command failed with exit code 1.
