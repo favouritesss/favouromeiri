@@ -177,7 +177,11 @@ export default function Portfolio() {
                 {/* Projects Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project, index) => (
-                        <Card key={index} className="group overflow-hidden border-none shadow-none hover:shadow-2xl transition-all duration-300 bg-background rounded-2xl">
+                        <Card
+                            key={index}
+                            className="group overflow-hidden border-none shadow-none hover:shadow-2xl transition-all duration-300 bg-background rounded-2xl cursor-pointer"
+                            onClick={() => project.link !== "#" && window.open(project.link, "_blank")}
+                        >
                             <div className="relative h-48 overflow-hidden">
                                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
                                 {/* Placeholder/Actual Image */}
@@ -188,11 +192,11 @@ export default function Portfolio() {
                                 />
                                 {/* Overlay Actions */}
                                 <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm gap-4">
-                                    <Button size="icon" variant="secondary" className="rounded-full" onClick={() => project.link !== "#" && window.open(project.link, "_blank")}>
+                                    <Button size="icon" variant="secondary" className="rounded-full" onClick={(e) => { e.stopPropagation(); project.link !== "#" && window.open(project.link, "_blank") }}>
                                         <ExternalLink className="h-5 w-5" />
                                     </Button>
                                     {project.github && project.github !== "#" && (
-                                        <Button size="icon" variant="secondary" className="rounded-full" onClick={() => window.open(project.github, "_blank")}>
+                                        <Button size="icon" variant="secondary" className="rounded-full" onClick={(e) => { e.stopPropagation(); window.open(project.github, "_blank") }}>
                                             <Github className="h-5 w-5" />
                                         </Button>
                                     )}
