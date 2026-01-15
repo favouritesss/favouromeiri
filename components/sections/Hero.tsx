@@ -54,13 +54,13 @@ export default function Hero() {
                         </div>
 
                         <div className="flex items-center justify-center lg:justify-start gap-6 pt-8 text-muted-foreground">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-transform hover:scale-110">
+                            <a href="https://github.com/favouritesss" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-transform hover:scale-110">
                                 <Github className="h-6 w-6" />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-transform hover:scale-110">
+                            <a href="https://www.linkedin.com/in/omeiri-favour-620a582a6/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-transform hover:scale-110">
                                 <Linkedin className="h-6 w-6" />
                             </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-transform hover:scale-110">
+                            <a href="https://x.com/that_tech_bee?s=21" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-transform hover:scale-110">
                                 <Twitter className="h-6 w-6" />
                             </a>
                         </div>

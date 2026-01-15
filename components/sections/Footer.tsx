@@ -16,13 +16,13 @@ export default function Footer() {
 
                     {/* Socials */}
                     <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-md transition-all">
+                        <a href="https://github.com/favouritesss" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-md transition-all">
                             <Github className="h-5 w-5" />
                         </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-md transition-all">
+                        <a href="https://www.linkedin.com/in/omeiri-favour-620a582a6/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-md transition-all">
                             <Linkedin className="h-5 w-5" />
                         </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-md transition-all">
+                        <a href="https://x.com/that_tech_bee?s=21" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-md transition-all">
                             <Twitter className="h-5 w-5" />
                         </a>
                     </div>

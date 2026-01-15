@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Outfit, Space_Grotesk } from "next/font/google"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
+import ScrollToTop from "@/components/ui/ScrollToTop"
 import "./globals.css"
 
 // ✅ Fonts
@@ -57,6 +58,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Suspense fallback={null}>{children}</Suspense>
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

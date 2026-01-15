@@ -66,7 +66,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold">Email</h3>
-                                        <p className="text-muted-foreground">favouromeiri@gmail.com</p>
+                                        <p className="text-muted-foreground">favouromeiri5@gmail.com</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -77,7 +77,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold">Phone</h3>
-                                        <p className="text-muted-foreground">+234 906 047 4709</p>
+                                        <p className="text-muted-foreground">09060474709</p>
                                     </div>
                                 </CardContent>
                             </Card>
