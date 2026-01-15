@@ -1,0 +1,75 @@
+
+> my-v0-project@0.1.0 build C:\Users\HP\Desktop\portfoli\favouromeiri
+> next build
+
+  ▲ Next.js 14.2.16
+
+   Creating an optimized production build ...
+Error: Cannot apply unknown utility class `animate-gradient`
+    at onInvalidCandidate (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:21:1511)
+    at Te (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:16:36652)
+    at C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:21:355
+    at Rr (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:3:1718)
+    at _ (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:3:1377)
+    at $e (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:21:172)
+    at un (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:38:294)
+    at async cn (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\tailwindcss@4.1.18\node_modules\tailwindcss\dist\lib.js:38:631)
+    at async Xr (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\@tailwindcss+node@4.1.18\node_modules\@tailwindcss\node\dist\index.js:10:3417)
+    at async I (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\@tailwindcss+postcss@4.1.18\node_modules\@tailwindcss\postcss\dist\index.js:10:3977)
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!C:\Users\HP\Desktop\portfoli\favouromeiri\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+Failed to compile.
+
+./app/globals.css:1:1
+Syntax error: tailwindcss: C:\Users\HP\Desktop\portfoli\favouromeiri\app\globals.css Cannot apply unknown utility class `animate-gradient`
+
+[1m[31m>[39m[22m[90m 1 | [39m[36m@import[39m [32m"tailwindcss"[39m[33m;[39m
+ [90m   | [39m[1m[31m^[39m[22m
+ [90m 2 | [39m[36m@import[39m [32m"tw-animate-css"[39m[33m;[39m
+ [90m 3 | [39m
+
+./app/globals.css
+Syntax error: tailwindcss: C:\Users\HP\Desktop\portfoli\favouromeiri\app\globals.css Cannot apply unknown utility class `border-border` (1:1)
+
+[1m[31m>[39m[22m[90m 1 | [39m[36m@import[39m [32m"tailwindcss"[39m[33m;[39m
+ [90m   | [39m[1m[31m^[39m[22m
+ [90m 2 | [39m[36m@import[39m [32m"tw-animate-css"[39m[33m;[39m
+ [90m 3 | [39m
+
+    at tryRunOrWebpackError (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:312989)
+    at __webpack_require_module__ (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:130607)
+    at C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:131454
+    at symbolIterator (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\neo-async\async.js:1:14444)
+    at done (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\neo-async\async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:13:28858), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:13:26012)
+    at C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:130328
+    at symbolIterator (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\neo-async\async.js:1:14402)
+-- inner error --
+Syntax error: tailwindcss: C:\Users\HP\Desktop\portfoli\favouromeiri\app\globals.css Cannot apply unknown utility class `border-border` (1:1)
+
+[1m[31m>[39m[22m[90m 1 | [39m[36m@import[39m [32m"tailwindcss"[39m[33m;[39m
+ [90m   | [39m[1m[31m^[39m[22m
+ [90m 2 | [39m[36m@import[39m [32m"tw-animate-css"[39m[33m;[39m
+ [90m 3 | [39m
+
+    at Object.<anonymous> (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!C:\Users\HP\Desktop\portfoli\favouromeiri\app\globals.css:1:7)
+    at C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:922493
+    at Hook.eval [as call] (eval at create (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:13:28636), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:13:25906)
+    at C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:131198
+    at tryRunOrWebpackError (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:312943)
+    at __webpack_require_module__ (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:130607)
+    at C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\webpack\bundle5.js:28:131454
+    at symbolIterator (C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\compiled\neo-async\async.js:1:14444)
+
+Generated code for C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!C:\Users\HP\Desktop\portfoli\favouromeiri\node_modules\.pnpm\next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!C:\Users\HP\Desktop\portfoli\favouromeiri\app\globals.css
+
+Import trace for requested module:
+./app/globals.css
+
+
+> Build failed because of webpack errors
+ ELIFECYCLE  Command failed with exit code 1.
