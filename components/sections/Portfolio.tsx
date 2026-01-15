@@ -138,10 +138,14 @@ export default function Portfolio() {
 
                 {/* Portfolio Video Overview */}
                 <div className="mb-16 animate-fade-in-up delay-200">
-                    <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden glass-card p-2 shadow-2xl">
+                    <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden glass-card p-2 shadow-2xl">
                         <div className="relative rounded-xl overflow-hidden bg-black/20">
                             <video
                                 controls
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
                                 className="w-full h-auto rounded-xl shadow-2xl"
                                 poster="/modern-tech-office-workspace-with-developers-codin.jpg"
                             >

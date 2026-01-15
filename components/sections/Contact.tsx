@@ -88,7 +88,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold">Location</h3>
-                                        <p className="text-muted-foreground">Lagos, Nigeria (Available Remote)</p>
+                                        <p className="text-muted-foreground">Owerri, Nigeria (Available Remote)</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -101,16 +101,16 @@ export default function Contact() {
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label htmlFor="name" className="text-sm font-medium">Name</label>
-                                    <Input id="name" name="name" placeholder="John Doe" required className="bg-muted/50 border-border/50 h-12" />
+                                    <Input id="name" name="name" placeholder="Enter your first name" required className="bg-muted/50 border-border/50 h-12" />
                                 </div>
                                 <div className="space-y-2">
                                     <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                    <Input id="email" name="email" type="email" placeholder="john@example.com" required className="bg-muted/50 border-border/50 h-12" />
+                                    <Input id="email" name="email" type="email" placeholder="Enter your email" required className="bg-muted/50 border-border/50 h-12" />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                                <Input id="subject" name="_subject" placeholder="Project Inquiry" required className="bg-muted/50 border-border/50 h-12" />
+                                <Input id="subject" name="_subject" placeholder="Enter subject" required className="bg-muted/50 border-border/50 h-12" />
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="message" className="text-sm font-medium">Message</label>
