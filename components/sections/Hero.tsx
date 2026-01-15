@@ -1,18 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowRight, Eye, Github, Linkedin, Twitter } from "lucide-react"
 
 export default function Hero() {
-    const downloadCV = () => {
-        // Link to the resume file in public folder
-        const link = document.createElement('a');
-        link.href = '/resume.pdf';
-        link.download = 'Omeiri_Favour_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+
 
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -55,9 +47,9 @@ export default function Hero() {
                                 size="lg"
                                 variant="outline"
                                 className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/5"
-                                onClick={downloadCV}
+                                onClick={() => window.open('/resume.pdf', '_blank')}
                             >
-                                Download CV <Download className="ml-2 h-5 w-5" />
+                                View Resume <Eye className="ml-2 h-5 w-5" />
                             </Button>
                         </div>
 

@@ -5,62 +5,72 @@
 
 :root {
   /* Modern Deep Blue / Teal / Charcoal Palette */
-  --background: oklch(0.985 0.01 240); /* Very light cool gray */
-  --foreground: oklch(0.2 0.02 260); #1e293b /* Charcoal/Deep Slate */
-  
+  --background: oklch(0.985 0.01 240);
+  /* Very light cool gray */
+  --foreground: oklch(0.2 0.02 260);
+  /* Charcoal/Deep Slate */
+
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0.02 260);
-  
+
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.02 260);
-  
-  --primary: oklch(0.25 0.1 230); /* Deep Blue */
+
+  --primary: oklch(0.25 0.1 230);
+  /* Deep Blue */
   --primary-foreground: oklch(0.98 0 0);
-  
-  --secondary: oklch(0.75 0.15 180); /* Bright Teal */
+
+  --secondary: oklch(0.75 0.15 180);
+  /* Bright Teal */
   --secondary-foreground: oklch(0.2 0.05 260);
-  
+
   --muted: oklch(0.96 0.01 240);
   --muted-foreground: oklch(0.5 0.05 240);
-  
-  --accent: oklch(0.75 0.15 180); /* Matching Secondary Teal */
+
+  --accent: oklch(0.75 0.15 180);
+  /* Matching Secondary Teal */
   --accent-foreground: oklch(0.2 0.05 260);
-  
+
   --destructive: oklch(0.6 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
-  
+
   --border: oklch(0.9 0.02 240);
   --input: oklch(0.9 0.02 240);
   --ring: oklch(0.75 0.15 180);
-  
+
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: oklch(0.1 0.02 260); /* Deep Blue/Black */
+  --background: oklch(0.1 0.02 260);
+  /* Deep Blue/Black */
   --foreground: oklch(0.98 0.01 240);
-  
-  --card: oklch(0.15 0.03 260); /* Slightly lighter deep blue */
+
+  --card: oklch(0.15 0.03 260);
+  /* Slightly lighter deep blue */
   --card-foreground: oklch(0.98 0.01 240);
-  
+
   --popover: oklch(0.15 0.03 260);
   --popover-foreground: oklch(0.98 0.01 240);
-  
-  --primary: oklch(0.75 0.15 180); /* Bright Teal for dark mode primary */
+
+  --primary: oklch(0.75 0.15 180);
+  /* Bright Teal for dark mode primary */
   --primary-foreground: oklch(0.1 0.05 260);
-  
-  --secondary: oklch(0.3 0.1 230); /* Muted Deep Blue */
+
+  --secondary: oklch(0.3 0.1 230);
+  /* Muted Deep Blue */
   --secondary-foreground: oklch(0.98 0.01 240);
-  
+
   --muted: oklch(0.2 0.03 260);
   --muted-foreground: oklch(0.7 0.05 240);
-  
-  --accent: oklch(0.25 0.1 180); /* Darker Teal */
+
+  --accent: oklch(0.25 0.1 180);
+  /* Darker Teal */
   --accent-foreground: oklch(0.98 0.01 240);
-  
+
   --destructive: oklch(0.4 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
-  
+
   --border: oklch(0.25 0.03 260);
   --input: oklch(0.25 0.03 260);
   --ring: oklch(0.75 0.15 180);
@@ -75,10 +85,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }
@@ -88,37 +105,57 @@
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
-  
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-500 { animation-delay: 500ms; }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 
   @keyframes fadeInUp {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary bg-[200%_auto] animate-gradient;
   }
 
   @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
-  
+
   .animate-gradient {
     animation: gradient 6s linear infinite;
   }

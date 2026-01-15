@@ -11,6 +11,60 @@ export default function Portfolio() {
 
     const projects = [
         {
+            title: "Luxe Lips",
+            category: "E-commerce",
+            description: "A premium beauty and cosmetics e-commerce platform with elegant design and seamless checkout.",
+            tech: ["React", "Netlify", "Stripe"],
+            image: "/Screenshot 2026-01-14 190626.png",
+            link: "https://luxe-lips.netlify.app/",
+            github: "#"
+        },
+        {
+            title: "DC Mart Surf",
+            category: "E-commerce",
+            description: "Online marketplace for surf and beach gear featuring dynamic product filtering.",
+            tech: ["React", "Netlify", "Tailwind"],
+            image: "/Screenshot 2026-01-14 190725.png",
+            link: "https://dcmartsurf.netlify.app/",
+            github: "#"
+        },
+        {
+            title: "Resident Kitchen",
+            category: "Web Development",
+            description: "Modern landing page for a premier kitchen design and renovation service.",
+            tech: ["Next.js", "Vercel", "CSS Modules"],
+            image: "/screenshot-1768435314897.png",
+            link: "https://resident-kitchen-premier.vercel.app/",
+            github: "#"
+        },
+        {
+            title: "Gilded Aura",
+            category: "Design",
+            description: "Luxury jewelry brand showcase with immersive visual storytelling.",
+            tech: ["Next.js", "Vercel", "Framer Motion"],
+            image: "/screenshot-1768435350362.png",
+            link: "https://gilded-aura.vercel.app/",
+            github: "#"
+        },
+        {
+            title: "Deluxe Style Hub",
+            category: "Web Development",
+            description: "Fashion and lifestyle hub connecting trends with modern aesthetic.",
+            tech: ["Next.js", "Vercel"],
+            image: "/screenshot-1768435374741.png",
+            link: "https://deluxe-style-hub-c1e81e69.vercel.app/",
+            github: "#"
+        },
+        {
+            title: "Delightful Tapioca",
+            category: "Web Development",
+            description: "Creative food service platform with interactive menu and ordering system.",
+            tech: ["React", "Netlify"],
+            image: "/screenshot-1768435411415.png",
+            link: "https://delightful-tapioca-2a58ab.netlify.app/",
+            github: "#"
+        },
+        {
             title: "E-commerce Platform",
             category: "Web Development",
             description: "A full-stack e-commerce solution with inventory management, payment processing, and analytics.",
@@ -80,6 +134,26 @@ export default function Portfolio() {
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         A selection of my recent work across web development, security, and design.
                     </p>
+                </div>
+
+                {/* Portfolio Video Overview */}
+                <div className="mb-16 animate-fade-in-up delay-200">
+                    <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden glass-card p-2 shadow-2xl">
+                        <div className="relative aspect-video rounded-xl overflow-hidden bg-black/20">
+                            <video
+                                controls
+                                className="w-full h-full object-cover"
+                                poster="/modern-tech-office-workspace-with-developers-codin.jpg"
+                            >
+                                <source src="/Favour Omeiri Portfolio V2.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div className="p-4 text-center">
+                            <h3 className="text-xl font-bold mb-2">Portfolio Overview</h3>
+                            <p className="text-muted-foreground text-sm">A quick introduction to my work and skills.</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Filter Buttons */}
